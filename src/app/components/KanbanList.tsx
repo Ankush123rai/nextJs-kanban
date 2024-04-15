@@ -28,7 +28,7 @@ function KanbanList() {
     const { source, destination, draggableId, type } = result;
 
     if (type === "list") {
-      dispatch(reorderLists(source.index, destination.index));
+      dispatch(reorderLists({ startIndex: source.index, endIndex: destination.index }));
     } else if (type === "card") {
       const sourceListId = source.droppableId;
       const destListId = destination.droppableId;
@@ -223,7 +223,7 @@ function KanbanList() {
             </div>
           )}
         </Droppable>
-        <InputCard />
+        <InputCard type={""} listId={""}        />
       </div>
     </DragDropContext>
   );
