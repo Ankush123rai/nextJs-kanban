@@ -4,7 +4,7 @@ import React, { useState } from "react";
 // import style from './InputCard.module.css'
 import { useDispatch } from "react-redux";
 import { addList, addCard } from "../redux/todoSlice";
-import { v4 as uuid } from "uuid";
+
 import { RxCross1 } from "react-icons/rx";
 
 type InputCardProps = {
@@ -22,7 +22,7 @@ const InputCard = ({ type, listId }: InputCardProps) => {
   const handleSubmit = (e:any) => {
     e.preventDefault();
     if (title !== "") {
-      const id2 = uuid();
+      const id2 = Math.random().toString(36).substr(2, 9);
       if (type) {
         dispatch(addCard({ title: title, listId: listId }));
       } else if (title) {
