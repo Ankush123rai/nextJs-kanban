@@ -20,7 +20,7 @@ function KanbanList() {
   const reduxData = useSelector((state: any) => state.todosData.lists);
   const [showInputList, setShowInputList] = React.useState<{ [key: string]: boolean }>({});
   const [showInputCard, setShowInputCard] = React.useState<{ [key: string]: boolean }>({});
-  // const [cardTitle, setCardTitle] = React.useState("");
+
 
   const handleDragEnd = (result: any) => {
     if (!result.destination) return;
